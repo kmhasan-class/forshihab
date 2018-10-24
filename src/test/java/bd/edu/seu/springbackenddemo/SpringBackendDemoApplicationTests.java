@@ -46,7 +46,7 @@ public class SpringBackendDemoApplicationTests {
     @Before
     public void initializing(){
         std = new Student(1234, "Shihab", 3.12);
-        //studentRepository.save(std);
+        studentRepository.save(std);
         studentList = studentService.getAllStudents();
 
     }

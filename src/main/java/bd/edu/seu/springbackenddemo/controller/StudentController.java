@@ -20,9 +20,10 @@ public class StudentController {
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
+
     @GetMapping(value = "/student/rall")
     public ResponseEntity<List<Student>> getAllStudents1() {
-        return new ResponseEntity<List<Student> >(studentService.getAllStudents(), HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(studentService.getAllStudents());
     }
     // write code to test this service
 }

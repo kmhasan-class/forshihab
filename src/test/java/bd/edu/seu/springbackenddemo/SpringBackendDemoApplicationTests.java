@@ -1,12 +1,8 @@
 package bd.edu.seu.springbackenddemo;
-
-<<<<<<< HEAD
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-=======
 import bd.edu.seu.springbackenddemo.model.Student;
 import bd.edu.seu.springbackenddemo.repository.StudentRepository;
 import bd.edu.seu.springbackenddemo.service.StudentService;
@@ -21,18 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
-
->>>>>>> Adding test cases
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBackendDemoApplicationTests {
 
-<<<<<<< HEAD
-    @Test
-    public void contextLoads() {
-    }
-
-=======
     @Autowired
     private StudentRepository studentRepository;
 
@@ -46,7 +34,7 @@ public class SpringBackendDemoApplicationTests {
     @Before
     public void initializing(){
         std = new Student(1234, "Shihab", 3.12);
-        studentRepository.save(std);
+        //studentRepository.save(std);
         studentList = studentService.getAllStudents();
 
     }
@@ -72,7 +60,4 @@ public class SpringBackendDemoApplicationTests {
         Student found = studentService.getStudent(1234);
         assertThat(found).isEqualTo(std);
     }
-
-
->>>>>>> Adding test cases
 }

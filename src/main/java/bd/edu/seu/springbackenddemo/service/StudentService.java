@@ -23,4 +23,8 @@ public class StudentService {
     public Student getStudent(int studentId) {
         return studentRepository.findById(studentId).get();
     }
+
+    public void saveStudent(Student student){
+        studentRepository.save(student);
+    }
 }

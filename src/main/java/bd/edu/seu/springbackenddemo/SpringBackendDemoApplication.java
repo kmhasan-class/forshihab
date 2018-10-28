@@ -10,6 +10,6 @@ public class SpringBackendDemoApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(SpringBackendDemoApplication.class, args);
-        //run.getBean(DummyDataService.class).persistDummyData();
+        run.getBean(DummyDataService.class).persistDummyData();
     }
 }

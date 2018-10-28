@@ -4,18 +4,23 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.UniqueElements;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
     @Id
+    @NotNull
     private int id;
+    @NotNull
     private String name;
+    @NotNull
     private double cgpa;
 }

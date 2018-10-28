@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -34,12 +35,17 @@ public class SpringBackendDemoApplicationTests2 {
     }
 
     @Test
-    public void givenStudentService_whenPostForObject_thenCreatedObjectIsReturned() throws NullPointerException{
+    public void givenStudentService_whenGetForObject_thenObjectIsReturned(){
         final Student student = restTemplate.getForObject(resourceUrl + "/1234", Student.class);
         assertThat(student.getName()).isEqualTo("Shihab");
         assertThat(student.getId()).isEqualTo(1234);
         assertThat(student.getCgpa()).isBetween(2.00, 4.00);
 
+    }
+
+    @Test(expected = HttpServerErrorException.class)
+    public void givenStudentService_whenGetForEntity_httpServerErrorExceptionIsReturned(){
+        final ResponseEntity<Student> response = restTemplate.getForEntity(resourceUrl + "/1238", Student.class);
     }
 
     @Test
@@ -48,8 +54,5 @@ public class SpringBackendDemoApplicationTests2 {
         assertThat(studentList).contains(new Student(1234, "Shihab", 3.12));
         assertThat(studentList).hasSize(5);
     }
-
-
-
 
 }

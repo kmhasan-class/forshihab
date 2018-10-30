@@ -4,8 +4,12 @@ import bd.edu.seu.springbackenddemo.model.Student;
 import bd.edu.seu.springbackenddemo.repository.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringApplicationRunListener;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -16,7 +20,9 @@ import java.util.Map;
 
 @Service
 @AllArgsConstructor
-public class StudentService {
+@Component
+public class StudentService{
+    @Autowired
     private StudentRepository studentRepository;
 
     public List<Student> getAllStudents() {

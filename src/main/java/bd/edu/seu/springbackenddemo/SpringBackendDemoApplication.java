@@ -1,8 +1,5 @@
 package bd.edu.seu.springbackenddemo;
 
-import bd.edu.seu.springbackenddemo.controller.StudentController;
-import bd.edu.seu.springbackenddemo.model.Student;
-import bd.edu.seu.springbackenddemo.repository.StudentRepository;
 import bd.edu.seu.springbackenddemo.service.DummyDataService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -51,7 +51,7 @@ public class SpringBackendDemoApplicationTests2 {
     @Test
     public void givenUrl_thenStudentListIsReturned(){
         final Student[] studentList = restTemplate.getForObject(resourceUrl + "/all", Student[].class);
-        assertThat(studentList).contains(new Student(1234, "Shihab", 3.12));
+        assertThat(studentList).contains(new Student(1234, "Shihab", 3.86));
         assertThat(studentList).hasSize(5);
     }
 

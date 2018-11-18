@@ -31,7 +31,7 @@ public class SpringBackendDemoApplicationTests1 {
 
     @Test
     public void givenResourceUrl_whenPostForObject_thenCreatedObjedtIsReturned(){
-        final HttpEntity<Student> request = new HttpEntity<>(new Student(1236, "Rian", 3.84));
+        final HttpEntity<Student> request = new HttpEntity<>(new Student(1236, "Ebrahim Rian", 3.84));
         final ResponseEntity<Student> response = restTemplate.postForEntity(resourceUrl + "/new", request, Student.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         final Student std = response.getBody();
